@@ -1,21 +1,24 @@
-import { GraphQLField } from 'graphql'
+import { GraphQLField, GraphQLObjectType } from 'graphql'
 import { SchemaDirectiveVisitor } from 'graphql-tools'
 
 export class RenameDirective extends SchemaDirectiveVisitor {
   public visitFieldDefinition(field: GraphQLField<any, any>) {
+    let graphqlObjectType
     switch (this.args.type) {
       case 'Query':
-        field.resolve = this.schema.getQueryType().getFields()[this.args.to].resolve
+        graphqlObjectType = this.schema.getQueryType() as GraphQLObjectType
         break
       case 'Mutation':
-        field.resolve = this.schema.getMutationType().getFields()[this.args.to].resolve
+        graphqlObjectType = this.schema.getMutationType() as GraphQLObjectType
         break
       case 'Subscription':
-        field.resolve = this.schema.getSubscriptionType().getFields()[this.args.to].resolve
+        graphqlObjectType = this.schema.getSubscriptionType() as GraphQLObjectType
         break
       default:
         throw new Error('Unkown type paramater')
     }
+    field.resolve = graphqlObjectType.getFields()[this.args.to].resolve
+
     field.isDeprecated = true
     field.deprecationReason = `Rename to "${this.args.to}"`
   }
