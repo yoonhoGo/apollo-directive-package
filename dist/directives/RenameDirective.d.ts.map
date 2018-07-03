@@ -1,1 +1,0 @@
-{"version":3,"file":"RenameDirective.d.ts","sourceRoot":"","sources":["../../src/directives/RenameDirective.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAqB,MAAM,SAAS,CAAA;AACzD,OAAO,EAAE,sBAAsB,EAAE,MAAM,eAAe,CAAA;AAEtD,oCAA6B,SAAQ,sBAAsB;IAClD,oBAAoB,CAAC,KAAK,EAAE,YAAY,CAAC,GAAG,EAAE,GAAG,CAAC;CAoB1D"}
