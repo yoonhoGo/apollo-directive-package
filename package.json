@@ -1,9 +1,12 @@
 {
   "name": "apollo-directives-package",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "typescript": {
+    "definition": "dist/index.d.ts"
+  },
   "dependencies": {
     "@types/graphql": "^0.13.2",
     "graphql": "^0.13.2",

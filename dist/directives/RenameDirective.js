@@ -38,4 +38,3 @@ var RenameDirective = /** @class */ (function (_super) {
     return RenameDirective;
 }(graphql_tools_1.SchemaDirectiveVisitor));
 exports.RenameDirective = RenameDirective;
-//# sourceMappingURL=RenameDirective.js.map
