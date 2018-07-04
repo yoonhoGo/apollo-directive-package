@@ -14,6 +14,16 @@ Please pull-request to update your awesome directive!🤩
 
 
 
+## To Do
+- [ ] Bugfix: Directive type is no match in Typescript
+```js
+makeExecutableSchema({
+    schemaDirectives: {...} // <- type no match error in Typescript
+})
+```
+
+
+
 ## License
 
 Code copyright 2018 Yoonho Go. Code released under [the MIT license](https://github.com/jgthms/bulma/blob/master/LICENSE).
