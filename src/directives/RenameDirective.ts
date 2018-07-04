@@ -2,7 +2,7 @@ import { GraphQLField, GraphQLObjectType } from 'graphql'
 import { SchemaDirectiveVisitor } from 'graphql-tools'
 
 export class RenameDirective extends SchemaDirectiveVisitor {
-  public visitFieldDefinition(field: GraphQLField<any, any>) {
+  public visitFieldDefinition(field: GraphQLField<any, any>): GraphQLField<any, any> | void {
     let graphqlObjectType
     switch (this.args.type) {
       case 'Query':
