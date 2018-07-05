@@ -4,7 +4,7 @@
 
 This is directives package for [Apollo](https://www.apollographql.com/)
 
-## Usage
+## Usage example
 in .js
 ```js
 var { RenameDirective } = require('apollo-directives-package') // in VanillaJS(javascript)
@@ -32,6 +32,18 @@ const schema = makeExecutableSchema({
 })
 ```
 
+```graphql
+type Query {
+  getBook: Book
+  anotherGetBook: Book @rename(type: "Query", to: "allBook")
+}
+
+type Mutation {
+  createBook(title: "Apollo Directives Package"): Book
+  newBook(title: "Apollo Directives Package"): Book @rename(type: "Mutation", to: "createBook")
+}
+```
+
 ## Directives list
 
 1. RenameDirective: To rename(redirect) other Query, Mutation, Field resolve
@@ -41,13 +53,15 @@ Please pull-request to update your awesome directive!🤩 and give me your usern
 
 
 ## To Do
-- [ ] Bug: Directive type is no match in Typescript
+### Bugs
+- [ ] Directive type is no match in Typescript
 ```js
 makeExecutableSchema({
     schemaDirectives: {...} // <- type no match error in Typescript
 })
 ```
-
+### Features
+- [ ] RenameDirective: Apply a resolve of Type
 
 
 ## License
