@@ -27,7 +27,8 @@ import { RenameDirective } from 'apollo-directives-package'
 const schema = makeExecutableSchema({
   schemaDirectives: {
     ...
-    rename: RenameDirective as any, // Refer to Bug in Todo
+    rename: RenameDirective, // if graphql-tools >= 3.x.x
+    rename: RenameDirective as any, // if graphql-tools < 3.x.x
   }
 })
 ```
@@ -54,14 +55,14 @@ Please pull-request to update your awesome directive!🤩 and give me your usern
 
 ## To Do
 ### Bugs
-- [ ] Directive type is no match in Typescript
+- [x] Directive type is no match in Typescript -> Resolved.(Refer to version of `graphql-tools`)
 ```js
 makeExecutableSchema({
     schemaDirectives: {...} // <- type no match error in Typescript
 })
 ```
-### Features
-- [ ] RenameDirective: Apply a resolve of Type
+<!-- ### Features
+- [ ] RenameDirective: Apply a resolve of Type -->
 
 
 ## License
